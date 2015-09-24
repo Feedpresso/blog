@@ -199,6 +199,10 @@ pre {
 
         path {
             fill: $grey-color;
+            &.o {
+                fill: $background-color;
+            }
         }
+
     }
 }

@@ -2,8 +2,6 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
     <div class="footer-col-wrapper">
       <div class="footer-col  footer-col-1">
         <ul class="contact-list">
@@ -12,7 +10,7 @@
         </ul>
       </div>
 
-      <div class="footer-col  footer-col-2">
+      <div class="footer-col  footer-col-1">
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
@@ -28,9 +26,8 @@
           </li>
           {% endif %}
 
-          {% if site.twitter_username %}
           <li>
-            <a href="https://twitter.com/{{ site.twitter_username }}">
+            <a href="https://twitter.com/Feedpresso">
               <span class="icon  icon--twitter">
                 <svg viewBox="0 0 16 16">
                   <path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
@@ -38,15 +35,31 @@
                 </svg>
               </span>
 
-              <span class="username">{{ site.twitter_username }}</span>
+              <span class="username">@Feedpresso</span>
             </a>
           </li>
-          {% endif %}
+
+          <li>
+            <a href="https://facebook.com/Feedpresso">
+              <span class="icon  icon--facebook">
+                <svg viewBox="0 0 0 0 15.999999 16.000121">
+                  <path fill="#3c5a99" d="M 15.11699,16.00012 C 15.60459,16.00012 16,15.60471 16,15.11698 V 0.88307 C 16,0.39528 15.60465,0 15.11699,0 H 0.8830796 C 0.3952896,0 -3.9535245e-7,0.39528 -3.9535245e-7,0.88307 v 14.23391 c 0,0.48767 0.39521999535245,0.88314 0.88307999535245,0.88314 H 15.11699 z"/>
+                  <path class="o" fill="#ffffff" d="M 11.03977,16.00012 V 9.80399 h 2.07974 L 13.43092,7.38925 H 11.03977 V 5.84759 c 0,-0.69912 0.19413,-1.17555 1.19666,-1.17555 L 13.5151,4.67148 V 2.51171 c -0.22114,-0.0294 -0.98017,-0.0952 -1.86325,-0.0952 -1.8435704,0 -3.1057304,1.12533 -3.1057304,3.1919 v 1.78081 h -2.08508 v 2.41474 h 2.08508 v 6.19613 H 11.03977 z"/>
+                </svg>
+
+              </span>
+
+              <span class="username">Feedpresso</span>
+            </a>
+          </li>
         </ul>
       </div>
 
-      <div class="footer-col  footer-col-3">
-        <p class="text">{{ site.description }}</p>
+      <div class="footer-col  footer-col-4">
+        <a href="https://play.google.com/store/apps/details?id=com.feedpresso.mobile">
+        <img alt="Android app on Google Play"
+            src="https://developer.android.com/images/brand/en_app_rgb_wo_45.png" />
+        </a>
       </div>
     </div>
 
