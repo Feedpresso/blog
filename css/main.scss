@@ -6,11 +6,10 @@
 
 
 // Our variables
-$base-font-family: Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
+$base-font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   18px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
-
 $spacing-unit:     30px;
 
 $text-color:       #111;
@@ -50,3 +49,6 @@ $on-laptop:        800px;
         "layout",
         "syntax-highlighting"
 ;
+
+// Import fonts
+@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,600);
