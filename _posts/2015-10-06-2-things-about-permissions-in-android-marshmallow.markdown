@@ -14,8 +14,8 @@ Android is releasing a new permission model
 with [Marshmallow](https://www.android.com/versions/marshmallow-6-0/).
 A bit ago, we were searching, how things are going to change for us as developers.
 The change is, that now, permissions are going to be requested at runtime
-of application instead of being requested during an install.
-However, there are two things to know before diving deep.
+instead of being requested during an install.
+However, there are two things to know before diving deeper.
 
 # targetSdkVersion
 
@@ -26,9 +26,10 @@ during install time as before.
 
 # Normal permissions
 
-You are not going to need to do any changes, if one of the
-[Normal Permissions](https://developer.android.com/guide/topics/security/normal-permissions.html)
-that you are granted automatically. If you
+You are not going to need to do any changes, if all of the permissions
+that you are using are in a group of
+[Normal Permissions](https://developer.android.com/guide/topics/security/normal-permissions.html).
+Normal Permissions are granted automatically during install time. If you
 use only these, there won't be any SecurityException
 during runtime regarding them. Also, users cannot revoke them as well.
 
