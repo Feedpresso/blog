@@ -56,3 +56,17 @@
 {% else %}
   <meta name="twitter:image:src" content="{{ site.url }}/img/Feedpresso-app-icon-01.png">
 {% endif %}
+
+
+
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 220 }}{% else %}{{ site.description }}{% endif %}">
+  
+  {% if page.tags %}
+  <meta name="keywords" content="{{ page.tags | join: ', ' }}">
+  {% endif %}
+  
+  {% if page.author %}
+  <meta content="{{ page.author }}" property="author">
+  {% endif %}
+  
+  

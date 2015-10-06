@@ -6,11 +6,7 @@
   {% include meta.html %}
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 220 }}{% else %}{{ site.description }}{% endif %}">
-  
-  {% if page.tags %}
-  <meta name="keywords" content="{{ page.tags | join: ', ' }}">
-  {% endif %}
+
 
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">

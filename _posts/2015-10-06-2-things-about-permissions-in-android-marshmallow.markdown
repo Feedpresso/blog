@@ -2,6 +2,7 @@
 layout: post
 title:  "2 things you need to know about new Android permissions in Marshmallow as a developer"
 date:   2015-10-08 10:12:51
+author: Tadas Šubonis
 tags:
 - feedpresso
 - android
