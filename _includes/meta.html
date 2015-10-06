@@ -9,8 +9,8 @@
 {% else %}
   <meta content="website" property="og:type">
 {% endif %}
-  <meta content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" property="og:description">
-{% endif %}
+  <meta content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 220 }}{% else %}{{ site.description }}{% endif %}" property="og:description">
+
 {% if page.url %}
   <meta content="{{ site.url }}{{ page.url }}" property="og:url">
 {% endif %}
@@ -49,7 +49,7 @@
   <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
 {% endif %}
 
-  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 220 }}{% else %}{{ site.description }}{% endif %}">
 
 {% if page.image %}
   <meta name="twitter:image:src" content="{{ site.url }}/img/{{ page.image }}">
