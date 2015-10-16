@@ -141,18 +141,18 @@ coreos:
 
 For more information it would be worth reading these articles:
 
-1. https://github.com/coreos/fleet/blob/master/Documentation/architecture.md
-2. https://github.com/coreos/fleet/blob/master/Documentation/deployment-and-configuration.md
-3. https://github.com/coreos/etcd/blob/master/Documentation/configuration.md
-4. https://github.com/coreos/etcd/blob/master/Documentation/tuning.md
+1. <https://github.com/coreos/fleet/blob/master/Documentation/architecture.md>
+2. <https://github.com/coreos/fleet/blob/master/Documentation/deployment-and-configuration.md>
+3. <https://github.com/coreos/etcd/blob/master/Documentation/configuration.md>
+4. <https://github.com/coreos/etcd/blob/master/Documentation/tuning.md>
 
 
 Also, it is worth taking a look into these issues:
 
-1. https://github.com/coreos/fleet/issues/1289
-2. https://github.com/coreos/fleet/issues/1181
-3. https://github.com/coreos/fleet/issues/1119
-4. https://github.com/coreos/fleet/issues/1250
+1. <https://github.com/coreos/fleet/issues/1289>
+2. <https://github.com/coreos/fleet/issues/1181>
+3. <https://github.com/coreos/fleet/issues/1119>
+4. <https://github.com/coreos/fleet/issues/1250>
 
 
 

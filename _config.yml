@@ -9,4 +9,3 @@ paginate: 5
 # Build settings
 markdown: redcarpet
 highlighter: pygments
-
