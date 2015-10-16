@@ -115,11 +115,12 @@ fleetd[615]: INFO manager.go:259: Removing systemd unit spark-tmp.mount
 fleetd[615]: INFO manager.go:182: Instructing systemd to reload units
 ```
 
-In cases like this, you would need to tune _engine-reconcile-interval_, _etcd-request-timeout_ and _agent_ttl_. Most likely you will want to bump _etcd-request-timeout_.
+In cases like this, you would need to tune _engine-reconcile-interval_, _etcd-request-timeout_ and _agent-ttl_. Most likely you will want to bump _etcd-request-timeout_.
 _engine-reconcile-interval_ determines how often your fleetd consults with etcd for unit changes in etcd. It might be good to increase this value to reduce the load on etcd 
 at the expense of how fast changes are picked up. 
 
-It is not completely clear what _agent-ttl_ does, but since agent is responsible for actually running and stopping on the system, this value is used to determine if it is
+It is not completely clear what _agent-ttl_ does, but since agent is responsible for actual running and stopping of units 
+on the system, this value is used to determine if it is
 still possible to do that. In case the agent is dead, it would probably start a new one.
 
 
