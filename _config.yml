@@ -7,4 +7,6 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://blog.feedpresso.com" # the base hostname & protocol for your site
 paginate: 5
 # Build settings
-markdown: kramdown
+markdown: redcarpet
+highlighter: pygments
+
