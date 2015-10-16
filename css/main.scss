@@ -6,7 +6,7 @@
 
 
 // Our variables
-$base-font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: Open Sans, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   18px;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
@@ -51,4 +51,4 @@ $on-laptop:        800px;
 ;
 
 // Import fonts
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,600);

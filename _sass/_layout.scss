@@ -29,7 +29,6 @@
 .site-nav {
     float: right;
     line-height: 56px;
-    padding-top: 8px;
 
     .menu-icon {
         display: none;
@@ -239,4 +238,11 @@
             font-size: 18px;
         }
     }
+}
+
+/**
+ * Home page
+ */
+.home .post {
+    margin-bottom: 10ex;
 }
