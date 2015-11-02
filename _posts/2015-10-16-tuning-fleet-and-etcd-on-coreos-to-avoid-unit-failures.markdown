@@ -12,9 +12,9 @@ tags:
 - devops
 ---
 
-Here at Feedpresso we are relying on [CoreOS](https://coreos.com/) to run our services. We have ran Feedpresso 
-on various clouds (Vultr, Google Cloud Compute, Microsoft Azure) and we have learned quite a 
-few things along the way. One of the most frustrating issues that we had to face almost every 
+Here at Feedpresso we are relying on [CoreOS](https://coreos.com/) to run our services. We have ran Feedpresso
+on various clouds (Vultr, Google Cloud Compute, Microsoft Azure) and we have learned quite a
+few things along the way. One of the most frustrating issues that we had to face almost every
 time was the [etcd](https://github.com/coreos/etcd) and [fleet](https://github.com/coreos/fleet) runtime behaviour.
 
 In most of theses cases, we had just to appropriately tune them to make everything work again.
@@ -26,8 +26,8 @@ Consider this post as introduction to things you might want to try out or check 
 
 # VM load and latency
 
-Most of these issues arise when there is considerable latency between node communicatons and usually this latency comes
-from high Virtual Machine load. We've seen quite often etcd and fleet 
+Most of these issues arise when there is considerable latency between node communications and usually this latency comes
+from high Virtual Machine load. We've seen quite often etcd and fleet
 failing when CPU was around 100% for a few minutes. Most of these parameters will be coping with that latency.
 
 # etcd
@@ -37,7 +37,7 @@ As etcd is used by fleet, it is required to get *etcd* right first before gettin
 On etcd there are basically two properties that you might want to change: _heartbeat-interval_ and _election-timeout_ . The
 _election-timeout_ should be **at least** 5 times bigger than  _heartbeat-interval_ (5x - 10x bigger).
 
-We've seen quite often in our setups that _heartbeat-interval_ was set to a too low value. When there is a higher load on the 
+We've seen quite often in our setups that _heartbeat-interval_ was set to a too low value. When there is a higher load on the
 machine it started responding slower and it might cause a heartbeat failure. This in turn might cause leader reelection which
 would impact fleet.
 
@@ -57,7 +57,7 @@ or
 googleapi: got HTTP response code 500 with body: {"error":{"code":500,"message":""}}
 ```
 
-when you are using fleetctl or etcdctrl it is quote likely that you need to bump your _heartbeat-interval_value.
+when you are using fleetctl or etcdctrl it is quote likely that you need to bump your _heartbeat-interval_value_.
 
 This can be done like this in your cloud-config file:
 
@@ -70,7 +70,7 @@ coreos:
     election-timeout: 6000
 ```
 
-Obviously, you need to finetune them to your set up. If those values are left to be to high, you might not
+Obviously, you need to fine-tune them to your set up. If those values are left to be to high, you might not
 be able to cope with cluster failures very well.
 
 
@@ -80,7 +80,7 @@ Fleet is quite sensitive to response times from etcd as well. If it loses connec
 recovers it, it would restart all units on that machine and this might not be the thing you would want.
 
 For example, the high database usage would cause a latency increase and that would make fleet lose connection
-to etcd. Then when connection is restarted all units are going to be restarted together with the DB that is 
+to etcd. Then when connection is restarted all units are going to be restarted together with the DB that is
 obviously in use at that moment.
 
 In fleet logs it usually looks like this:
@@ -116,10 +116,10 @@ fleetd[615]: INFO manager.go:182: Instructing systemd to reload units
 ```
 
 In cases like this, you would need to tune _engine-reconcile-interval_, _etcd-request-timeout_ and _agent-ttl_. Most likely you will want to bump _etcd-request-timeout_.
-_engine-reconcile-interval_ determines how often your fleetd consults with etcd for unit changes in etcd. It might be good to increase this value to reduce the load on etcd 
-at the expense of how fast changes are picked up. 
+_engine-reconcile-interval_ determines how often your fleetd consults with etcd for unit changes in etcd. It might be good to increase this value to reduce the load on etcd
+at the expense of how fast changes are picked up.
 
-It is not completely clear what _agent-ttl_ does, but since agent is responsible for actual running and stopping of units 
+It is not completely clear what _agent-ttl_ does, but since agent is responsible for actual running and stopping of units
 on the system, this value is used to determine if it is
 still possible to do that. In case the agent is dead, it would probably start a new one.
 
@@ -131,7 +131,7 @@ Cloud config could look like this:
 coreos:
   fleet:
     public-ip: $private_ipv4
-    metadata: 
+    metadata:
     engine-reconcile-interval: 10
     etcd-request-timeout: 5
     agent-ttl: 120s
@@ -154,6 +154,3 @@ Also, it is worth taking a look into these issues:
 2. <https://github.com/coreos/fleet/issues/1181>
 3. <https://github.com/coreos/fleet/issues/1119>
 4. <https://github.com/coreos/fleet/issues/1250>
-
-
-
