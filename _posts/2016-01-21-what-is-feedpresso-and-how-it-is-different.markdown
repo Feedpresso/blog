@@ -22,11 +22,13 @@ they are most likely to like, while letting _them_ to choose their news sources.
 The _any language_ and _any source_ traits are really important to us as these are usually the biggest obstacles users of other news readers are facing.
 
 We follow these design goals while developing Feedpresso:
+
  1. It should be **simple** to use
  1. Readers should get **relevant content**
  1. It should be available in **local** languages
 
 These goals lead us to features like:
+
  * Automatic personalisation -- Feedpresso learns from your reading habits
  'behind the scenes'. As a result, it provides relevant content while being
  simple to use.
@@ -101,6 +103,7 @@ Obviously, categories help to mitigate this, but it's not something that
 makes application easy to use.
 
 Feedpresso here provides a number of advantages:
+
 1. It provides a default list of content for new readers in their local
 language, while allowing you to change it.
 1. Even if there is a mixed content source (topics like criminal activity,
