@@ -81,6 +81,9 @@ which is most likely not interesting to you at all.
 A better approach here is to pick a specific source that you would
 like to follow. And that's the route we chose with Feedpresso.
 
+Furthermore, they support usually only English language so you would have
+a hard time getting content in your local language.
+
 ### RSS readers
 There are lot of RSS readers on the market. A few really great products (e.g.
 Feedly) and lots of mediocre ones. In most cases, they are simple and
@@ -120,6 +123,9 @@ to see those news stories whether you are into football or not.
 
 And what if you like tennis, but none of your friends do? You
 are not likely to see any news about that.
+
+Also, they suffer from the same problem as topic readers - content in your
+local language is not available.
 
 ## Conclusion
 We think that Feedpresso has found a unique place in this market: start
