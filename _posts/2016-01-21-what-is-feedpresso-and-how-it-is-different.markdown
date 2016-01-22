@@ -12,7 +12,7 @@ others what is Feedpresso and how it is different from other products available 
 
 We hope that this post will help to clarify that.
 
-## What we are?
+## What are we?
 
 In Feedpresso you get **recommendations** for
 news news stories in **any language** from **any source**.
