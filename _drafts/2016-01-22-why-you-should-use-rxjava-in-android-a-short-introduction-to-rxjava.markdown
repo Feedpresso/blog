@@ -41,6 +41,9 @@ compile 'io.reactivex:rxjava-async-util:0.21.0'
 compile 'io.reactivex:rxandroid:1.1.0'
 
 compile 'com.jakewharton.rxbinding:rxbinding:0.3.0'
+
+compile 'com.trello:rxlifecycle:0.4.0'
+compile 'com.trello:rxlifecycle-components:0.4.0'
 ```
 
 These will include:
@@ -312,11 +315,89 @@ Having a generic handler, would be even better:
 ```
 
 ### Extract actions methods
+Having lots of inner classes might not look so readable after a while
+(especially if you are not using RetroLambda).
 
+So a code like this:
+
+```java
+.doOnNext(new Action1<Pair<Settings, List<Message>>>() {
+    @Override
+    public void call(Pair<Settings, List<Message>> pair) {
+        System.out.println("Received settings" + pair.first);
+    }
+})
+```
+
+could look a lot better if refactored into this:
+
+```java
+....
+.doOnNext(logSettings())
+...
+@NonNull
+private Action1<Pair<Settings, List<Message>>> logSettings() {
+    return new Action1<Pair<Settings, List<Message>>>() {
+        @Override
+        public void call(Pair<Settings, List<Message>> pair) {
+            System.out.println("Received settings" + pair.first);
+        }
+    };
+}
+```
 
 
 ### Use custom classes or tuples
+There will be many occasions where one value depends on the first one
+(User and user settings?) and you would like to get both of them
+using two asynchronous requests.
+
+In such cases we would suggest using http://www.javatuples.org/ .
+
+Example:
+
+```java
+
+Observable.fromCallable(createNewUser())
+        .subscribeOn(Schedulers.io())
+        .flatMap(new Func1<User, Observable<Pair<User, Settings>>>() {
+            @Override
+            public Observable<Pair<User, Settings>> call(final User user) {
+                return Observable.from(fetchUserSettings(user))
+                        .map(new Func1<Settings, Pair<User, Settings>>() {
+                            @Override
+                            public Pair<User, Settings> call(Settings o) {
+                                return Pair.create(user, o);
+                            }
+                        });
+
+            }
+        });
+```
+
+
 ### Lifecycle management
+It is going to be often a case when a background process (subscription) is
+going to survive longer than the Activity or Fragment that contains it. But
+what if you don't care about the result if user leaves the actvity?
+
+[RxLifecycle](https://github.com/trello/RxLifecycle) project will help you here.
+
+Wrap your observable like this (taken from docs),
+ it will unsubscribe when it is being
+destroyed:
+
+```java
+public class MyActivity extends RxActivity {
+    @Override
+    public void onResume() {
+        super.onResume();
+        myObservable
+            .compose(bindToLifecycle())
+            .subscribe();
+    }
+}
+```
 
 ## Conclusion
 This is far from complete guide about RxJava usage on Android but hopefully
