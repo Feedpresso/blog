@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  What is Feedpresso and how it is different?
+title:  What is Feedpresso and how is it different?
 date:   2016-01-21
 author: Tadas Šubonis
 tags:
@@ -12,7 +12,7 @@ others what is Feedpresso and how it is different from other products available 
 
 We hope that this post will help to clarify that.
 
-## What we are?
+## What are we?
 
 In Feedpresso you get **recommendations** for
 news stories in **any language** from **any source**.
