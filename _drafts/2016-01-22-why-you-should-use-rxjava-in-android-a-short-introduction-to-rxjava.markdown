@@ -11,22 +11,22 @@ tags:
 ---
 
 
-In most of the Android applications, you are reacting to user interactions
-(clicks, swipes and etc.) and you will be doing something in the background
+In most Android applications, you are reacting to user interactions
+(clicks, swipes and etc.) while doing something else in the background
 (networking).
 
-Orchestrating all of this is a hard thing and could quickly become unmanageable
-code mess.
+Orchestrating all of this is a hard thing and could quickly turn into an
+unmanageable code mess.
 
-
-For example, it isn't so easy, to send a request to a database over network
-and after that completes start fetching his messages and his preferences
-at the same time, and after all of that is complete - show a welcome message.
+For example, it isn't trivial to send a request to a database over network
+and after it completes start fetching user messages and preferences
+at the same time, and after all of that is complete show a welcome
+message.
 
 This is a case where [RxJava](https://github.com/ReactiveX/RxJava) (ReactiveX) excels - orchestrating multiple
 actions that happen due to certain events in the system.
 
-Using RxJava you will be able to forget Callbacks and hellish global
+Using RxJava you will be able to forget callbacks and hellish global
 state management.
 
 ## Quick start in Android studio
@@ -48,8 +48,8 @@ compile 'com.trello:rxlifecycle-components:0.4.0'
 
 These will include:
 
- * [RxJava](https://github.com/ReactiveX/RxJava) - a core ReactiveX library
- for Java.
+ * [RxJava](https://github.com/ReactiveX/RxJava) - a core ReactiveX
+ library for Java.
  * [RxAndroid](https://github.com/ReactiveX/RxAndroid) - RxJava extensions
  for Android that will help you with Android threading and Loopers.
  * [RxBinding](https://github.com/JakeWharton/RxBinding) - this will provide
@@ -59,7 +59,7 @@ These will include:
   [Future](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Future.html)s.
 
 ## Example
-I think, it's the best to start with an example:
+Let's start with an example:
 ```java
 Observable.just("1", "2")
         .subscribe(new Action1<String>() {
@@ -70,22 +70,22 @@ Observable.just("1", "2")
         });
 ```
 
-Here we create an  [Observable](http://reactivex.io/documentation/observable.html)
+Here we created an  [Observable](http://reactivex.io/documentation/observable.html)
 that will be emit two items *1* and *2*.
 
-Afterwards, we subscribe to those actions and we receive an item
+We subscribed to the observable and once receive an item,
 it will be printed out.
 
 ## Some details
-*Observable* is something, that you can subscribe to to listen for the items
-that the observable will emit. They can be constructed in many different
-ways. However, they usually don't begin emitting items, until you subscribe
-to them.
+*Observable* is something that you can subscribe to to listen for the
+items that the observable will emit. They can be constructed in many
+different ways. However, they usually don't begin emitting items until
+you subscribe to them.
 
 After you subscribe to an observable, you get a [Subscription](http://reactivex.io/RxJava/javadoc/rx/Subscription.html).
 The subscription will listen for the items from observable until it
 marks itself as completed or, otherwise, it will continue indefinitely
-(very rare case).
+(a very rare case).
 
 Furthermore, all of these actions are going to be executed on the main
 thread.
@@ -121,7 +121,7 @@ present almost **always**.
 
 ## Managing complicated flow.
 
-Remember the complicated flow, we described initially?
+Remember the complicated flow we described initially?
 
 Here is how it would look with RxJava:
 
@@ -168,7 +168,7 @@ user messages (```fetchUserMessages()```) and user settings (```fetchUserSetting
 *at the same time*. It will wait until both actions are completed
 and will return a combined result (```Pair.create()```).
 
-Keep in mind, that all of this is happening in the background on a separate
+Keep in mind that all of this is happening in the background on a separate
 thread.
 
 After that, it will print out settings that were received. Finally,
@@ -176,7 +176,7 @@ the list of messages is transformed into another observable that will start
 emitting messages themselves instead of an entire list, and each of the
 messages are printed.
 
-## Functional approach
+## A functional approach
 RxJava will be much easier if programmer is familiar with functional
 programming concepts such as *map* and *zip*. Also, they both
 share lots of similarities of how one would construct a generic
@@ -259,7 +259,7 @@ and databases.
 
 
 ## Interactive with Android UI
-This intro, wouldn't be complete without an example, how to use
+This intro wouldn't be complete without an example, how to use
 native Android UI elements.
 
 ```java
@@ -295,7 +295,7 @@ Over a time, we have noticed a few things that should be followed while
 working with RxJava.
 
 ### Always use error handler
-Skipping error handler like here
+Skipping an error handler like here
 
 ```java
 .subscribe(new Action1<Void>() {
@@ -306,7 +306,7 @@ Skipping error handler like here
 });
 ```
 
-is highly advised to avoid. As an exception thrown in observer or
+is generally not a good idea. An exception thrown in observer or
 in one of the actions will most likely kill your entire application.
 
 Having a generic handler, would be even better:
@@ -402,6 +402,5 @@ public class MyActivity extends RxActivity {
 ```
 
 ## Conclusion
-This is far from complete guide about RxJava usage on Android but hopefully
-it gave a few arguments in favour of RxJava compared to regular AsyncTask and
-guide
+This is far from a complete guide about RxJava usage on Android but hopefully
+it gave a few arguments in favor of RxJava compared to regular AsyncTask.
