@@ -6,6 +6,7 @@ author: Tadas Šubonis
 tags:
 - RxJava
 - Android
+- RxAndroid
 - introduction
 - tutorial
 ---
@@ -28,6 +29,36 @@ actions that happen due to certain events in the system.
 
 Using RxJava you will be able to forget Callbacks and hellish global
 state management.
+
+## Why?
+
+Let's get back to the example:
+
+>send a request to a database over network
+>and after that completes start fetching his messages and his preferences
+>at the same time, and after all of that is complete - show a welcome message.
+
+If this is dissected, there will be these main parts that **all happen
+in the background**:
+
+1. Fetch a user from database
+1. Fetch user settings and user's messages **at the same time**
+1. Combine results from both responses in to one
+
+To do the same in Java SE and Android, you are going to need to use:
+
+1. 3-4 different AsyncTasks
+1. Create a Semaphore, that will wait until both of the requests (settings
+  and messages) will complete
+1. Object-level fields to store the results
+
+It can be already seen, that this involves management of state
+and playing with some locking mechanisms in Java.
+
+All of that can be avoided with RxJava (see examples below) - everything
+can be expressed as a flow **in one place** based on a **functional** paradigm
+(see [this](http://c2.com/cgi/wiki?AdvantagesOfFunctionalProgramming)).
+
 
 ## Quick start in Android studio
 To get libraries that you
