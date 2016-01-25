@@ -91,6 +91,7 @@ These will include:
 
 ## Example
 Let's start with an example:
+
 ```java
 Observable.just("1", "2")
         .subscribe(new Action1<String>() {
@@ -122,6 +123,7 @@ Furthermore, all of these actions are going to be executed on the main
 thread.
 
 ## Expanded example
+
 ```java
 Observable.from(fetchHttpNetworkContentFuture())
         .subscribeOn(Schedulers.io())
