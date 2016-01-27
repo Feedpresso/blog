@@ -2,7 +2,7 @@
 layout: post
 title:  "Re-drawing the Drawer"
 date:   2015-10-16 15:12:51
-author: Ernest Walzel
+author: ernest
 tags:
 - UI
 - UX

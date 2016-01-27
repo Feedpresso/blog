@@ -2,7 +2,7 @@
 layout: post
 title:  Why you should use RxJava in Android a short introduction to RxJava
 date:   2016-01-25
-author: Tadas Šubonis
+author: tadas
 tags:
 - RxJava
 - Android

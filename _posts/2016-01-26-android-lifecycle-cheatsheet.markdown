@@ -2,7 +2,7 @@
 layout: post
 title:  Android Lifecycle Cheat Sheet
 date:   2016-01-26
-author: Ernest Walzel
+author: ernest
 tags:
 - Android lifecycle
 - Activity lifecycle

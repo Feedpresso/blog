@@ -2,7 +2,7 @@
 layout: post
 title:  "Tuning fleet and etcd on CoreOS to avoid unit failures"
 date:   2015-10-16 10:12:51
-author: Tadas Šubonis
+author: tadas
 tags:
 - feedpresso
 - fleet

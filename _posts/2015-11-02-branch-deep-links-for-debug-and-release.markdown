@@ -2,7 +2,7 @@
 layout: post
 title:  Branch deep links for debug and release on the same device
 date:   2015-11-02
-author: Ernest Walzel
+author: ernest
 tags:
 - Branch
 - Branch.io

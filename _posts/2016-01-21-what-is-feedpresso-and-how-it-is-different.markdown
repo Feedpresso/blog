@@ -2,7 +2,7 @@
 layout: post
 title:  What is Feedpresso and how is it different?
 date:   2016-01-21
-author: Tadas Šubonis
+author: tadas
 tags:
 ---
 
