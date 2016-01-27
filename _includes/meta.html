@@ -1,3 +1,7 @@
+{% if page.author %}
+  {% assign author = site.data.authors[page.author] %}
+{% endif %}
+
 <meta content="{{ site.title }}" property="og:site_name">
 {% if page.title %}
   <meta content="{{ page.title }}" property="og:title">
@@ -17,9 +21,11 @@
 {% if page.date %}
   <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
 {% endif %}
-{% if page.author %}
-  <meta content="{{ page.author }}" property="article:author">
+
+{% if author %}
+  <meta content="{{ author.facebook }}" property="article:author">
 {% endif %}
+
 {% if page.image %}
   <meta content="{{ site.url }}{{ page.image }}" property="og:image">
 {% else %}
@@ -59,14 +65,12 @@
 
 
 
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 220 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 220 }}{% else %}{{ site.description }}{% endif %}">
   
-  {% if page.tags %}
+{% if page.tags %}
   <meta name="keywords" content="{{ page.tags | join: ', ' }}">
-  {% endif %}
+{% endif %}
   
-  {% if page.author %}
-  <meta content="{{ page.author }}" property="author">
-  {% endif %}
-  
-  
+{% if author %}
+  <meta content="{{ author.name }}" property="author">
+{% endif %}
