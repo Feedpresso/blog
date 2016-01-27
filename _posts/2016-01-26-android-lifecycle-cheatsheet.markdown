@@ -8,6 +8,7 @@ tags:
 - Activity lifecycle
 - Fragment lifecycle
 - cheat sheet
+image: /img/android-lifecycles-cheat-sheet.jpg
 ---
 
 We've put together a simple cheat sheet that summarizes Android's
