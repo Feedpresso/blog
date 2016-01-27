@@ -55,8 +55,12 @@
 
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@feedpresso">
-<meta name="twitter:creator" content="@feedpresso">
+<meta name="twitter:site" content="@Feedpresso">
+
+{% if author %}
+  <meta name="twitter:creator" content="{{ author.twitter }}">
+{% endif %}
+
 {% if page.title %}
   <meta name="twitter:title" content="{{ page.title }}">
 {% else %}
@@ -66,7 +70,7 @@
   <meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
 {% endif %}
 
-  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 220 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 200 }}{% else %}{{ site.description }}{% endif %}">
 
 {% if page.image %}
   <meta name="twitter:image:src" content="{{ site.url }}{{ page.image }}">
