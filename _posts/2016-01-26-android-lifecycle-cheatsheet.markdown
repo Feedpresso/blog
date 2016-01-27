@@ -11,9 +11,7 @@ tags:
 image: /img/android-lifecycles-cheat-sheet.jpg
 ---
 
-We've put together a simple cheat sheet that summarizes Android's
-[Activity](http://developer.android.com/guide/components/activities.html) and
-[Fragment lifecycles](http://developer.android.com/guide/components/fragments.html) in one place.
+We've put together a simple cheat sheet that summarizes Android's [Activity](http://developer.android.com/guide/components/activities.html) and [Fragment lifecycles](http://developer.android.com/guide/components/fragments.html) in one place.
 
 [![Android Lifecycle Cheat Sheet](/img/android-lifecycles-cheat-sheet.jpg)](https://docs.google.com/drawings/d/1UDBkX4KE1K5ZWQ_wRw0ffXUSxzaaosddJxsRtRxDREQ/edit?usp=sharing)
 
