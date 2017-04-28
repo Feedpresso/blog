@@ -2,7 +2,7 @@
 layout: post
 title:  What is Feedpresso and how is it different?
 date:   2016-01-21
-author: Tadas Šubonis
+author: tadas
 tags:
 ---
 
@@ -15,7 +15,7 @@ We hope that this post will help to clarify that.
 ## What are we?
 
 In Feedpresso you get **recommendations** for
-news news stories in **any language** from **any source**.
+news stories in **any language** from **any source**.
 
 This means that to each of our readers, we recommend news stories that
 they are most likely to like, while letting _them_ to choose their news sources.
